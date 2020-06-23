@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'session/new'
   root :to => 'pages#home'
   resources :users, :only => [:index, :new, :create]
 
@@ -7,5 +6,6 @@ Rails.application.routes.draw do
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
 
-  resources :recipes, :only => [:new, :create]
+  resources :recipes #, :only => [:new, :create, :show]
+
 end
