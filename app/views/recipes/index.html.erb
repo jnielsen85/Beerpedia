@@ -1,4 +1,13 @@
 <h1>All Recipes</h1>
 <% @recipes.each do |recipe| %>
-  <%= link_to image_tag(@recipe.image, :class => 'thumb', :alt => recipe.name), recipe  %>
+  <div>
+    <div>
+    <%= image_tag recipe.image, :class => 'thumb', :alt => recipe.name if recipe.image.present?  %>
+    </div>
+    <div>
+      <ul>
+        <li><%= link_to recipe.name, recipe %></li>
+      </ul>
+    </div>
+  </div>
 <% end %>

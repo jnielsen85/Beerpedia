@@ -24,12 +24,14 @@ def index
   end
 
   def update
+    # redirect_to root_path unless @current_user.recipe_ids.include? params[:id]
     recipe = Recipe.find params[:id]
     recipe.update recipe_params
     redirect_to recipe
   end
 
   def destroy
+    # redirect_to root_path unless @current_user.recipe_ids.include? params[:id]
     recipe = Recipe.find params[:id]
     recipe.destroy
     redirect_to recipes_path
