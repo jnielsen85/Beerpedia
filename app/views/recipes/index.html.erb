@@ -1,2 +1,4 @@
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+<h1>All Recipes</h1>
+<% @recipes.each do |recipe| %>
+  <%= link_to image_tag(@recipe.image, :class => 'thumb', :alt => recipe.name), recipe  %>
+<% end %>

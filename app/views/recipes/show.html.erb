@@ -1,2 +1,18 @@
 <h1>Recipes#show</h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+
+<h1><%= @recipe.name %></h1>
+<%= image_tag @recipe.image, :class => 'feature' if @recipe.image.present? %>
+<ul>
+  <li>Name: <%= @recipe.name %></li>
+  <li>Decription: <%= @recipe.description %></li>
+  <li>Ingredients: <%= @recipe.ingredients %></li>
+  <li>Directions: <%= @recipe.directions %></li>
+  <li>Equipment: <%= @recipe.equipment %></li>
+</ul>
+
+<!--
+<div class="controls">
+  %= link_to 'Edit Artist', edit_artist_path(@artist) %>
+  %= link_to 'Delete Artist', @artist, :method => 'delete' %>
+</div>
+-->

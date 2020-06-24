@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+before_action :check_for_login
 
 def index
     @recipes = Recipe.all
@@ -14,6 +15,7 @@ def index
 
   def create
     recipe = Recipe.create recipe_params
+    @current_user.recipes << recipe
     redirect_to recipe
   end
 
@@ -35,6 +37,6 @@ def index
 
   private
   def recipe_params
-    params.require(:recipe).permit(:title, :descr)
+    params.require(:recipe).permit(:name, :description, :ingredients, :directions, :equipment, :image)
   end
 end
