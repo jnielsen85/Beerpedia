@@ -10,45 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_22_121736) do
+ActiveRecord::Schema.define(version: 2020_06_24_004135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "beers", force: :cascade do |t|
     t.text "name"
-    t.integer "brewery_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text "brewername"
+    t.text "description"
     t.float "acv"
     t.text "image"
-  end
-
-  create_table "beers_recipes", id: false, force: :cascade do |t|
-    t.integer "beer_id"
-    t.integer "recipe_id"
-  end
-
-  create_table "beers_types", id: false, force: :cascade do |t|
-    t.integer "beer_id"
-    t.integer "type_id"
-  end
-
-  create_table "breweries", force: :cascade do |t|
-    t.text "name"
-    t.text "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "style_id"
   end
 
   create_table "recipes", force: :cascade do |t|
-    t.text "title"
+    t.text "name"
+    t.text "description"
+    t.text "ingredients"
+    t.text "directions"
+    t.text "equipment"
+    t.text "image"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "beer_id"
   end
 
-  create_table "types", force: :cascade do |t|
+  create_table "styles", force: :cascade do |t|
     t.text "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

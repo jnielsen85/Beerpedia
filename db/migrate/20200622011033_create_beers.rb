@@ -2,7 +2,10 @@ class CreateBeers < ActiveRecord::Migration[5.2]
   def change
     create_table :beers do |t|
       t.text :name
-      t.integer :brewery_id
+      t.text :brewername
+      t.text :description
+      t.float :acv
+      t.text :image
 
       t.timestamps
     end
