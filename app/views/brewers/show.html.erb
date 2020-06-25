@@ -1,0 +1,15 @@
+<h1>Brewer#show</h1>
+
+<h1><%= @brewer.name %></h1>
+<%= image_tag @brewer.image, :class => 'feature' if @brewer.image.present? %>
+<ul>
+  <li><%= @brewer.name %></li>
+  <li><%= @brewer.bio %></li>
+  <li>Specialty: <%= @brewer.specialty %></li>
+</ul>
+
+
+<div class="controls">
+  <%= link_to 'Edit Brewer', edit_brewer_path(@brewer) %>
+  <%= link_to 'Delete Brewer', @brewer, :method => 'delete' %>
+</div>

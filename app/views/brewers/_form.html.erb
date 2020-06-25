@@ -1,0 +1,15 @@
+<%= form_for @brewer do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true, :autofocus => true %>
+
+  <%= f.label :bio, 'Bio' %>
+  <%= f.text_area :bio%>
+
+  <%= f.label :specialty, 'Specialty Brew' %>
+  <%= f.text_area :specialty %>
+
+  <%= f.label :image, 'logo'%>
+  <%= f.url_field :image %>
+
+  <%= f.submit 'Create Brewer'%>
+<% end %>

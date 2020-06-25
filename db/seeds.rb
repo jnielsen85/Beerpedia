@@ -1,14 +1,3 @@
-
-Beer.destroy_all
-b1 = Beer.create :name => 'Jims Lager'
-b2 = Beer.create :name => 'Jims Pilsner'
-b3 = Beer.create :name => 'Jims Pale Ale'
-puts "#{ Beer.count } beers"
-
-Recipe.destroy_all
-r1 = Recipe.create :name => 'Jims Lager Recipe'
-puts "#{ Recipe.count } recipes"
-
 Style.destroy_all
 t1 = Style.create :name => 'Ale'
 t2 = Style.create :name => 'Lager'
@@ -118,14 +107,3 @@ t105 = Style.create :name => 'Wood- and Barrel-Aged Pale to Amber Beer'
 t106 = Style.create :name => 'Wood- and Barrel-Aged Sour Beer'
 t107 = Style.create :name => 'Wood- and Barrel-Aged Strong Beer'
 puts "#{ Style.count } styles"
-
-
-# Associations #################################################################
-
-puts "Styles and beers"
-t2.beers << b1
-t3.beers << b2
-t19.beers << b3
-
-puts "Recipes and Beers"
-b1.recipes << r1

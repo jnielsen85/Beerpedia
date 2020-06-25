@@ -24,10 +24,17 @@ def index
   end
 
   def update
+    if @current_user.recipe_ids.include? params[:id]
+     recipe = Recipe.find params[:id]
+     recipe.update recipe_params
+     redirect_to recipe
+    else
+     redirect_to root_path
     # redirect_to root_path unless @current_user.recipe_ids.include? params[:id]
-    recipe = Recipe.find params[:id]
-    recipe.update recipe_params
-    redirect_to recipe
+    # recipe = Recipe.find params[:id]
+    # recipe.update recipe_params
+    # redirect_to recipe
+    end
   end
 
   def destroy
@@ -39,6 +46,6 @@ def index
 
   private
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :ingredients, :directions, :equipment, :image)
+    params.require(:recipe).permit(:name, :description, :acv, :color, :difficulty, :ingredients, :directions, :equipment, :image)
   end
 end
