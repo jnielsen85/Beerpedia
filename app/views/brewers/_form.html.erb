@@ -1,15 +1,28 @@
 <%= form_for @brewer do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, :required => true, :autofocus => true %>
 
-  <%= f.label :bio, 'Bio' %>
-  <%= f.text_area :bio%>
-
-  <%= f.label :specialty, 'Specialty Brew' %>
-  <%= f.text_area :specialty %>
-
-  <%= f.label :image, 'logo'%>
-  <%= f.url_field :image %>
-
+  <div class = "formItem">
+  <%= f.label :name %> <br>
+  <%= f.text_field :name, :required => true, :autofocus => true, :class => "finput" %>
+  </div>
+  <br>
+  <br>
+  <div class = "formItem">
+  <%= f.label :image, 'logo'%> <br>
+  <%= f.url_field :image, :placeholder => 'imageurl', :class => "finput" %>
+  </div>
+  <br>
+  <br>
+  <div class = "formItem">
+  <%= f.label :bio, 'Bio'  %> <br>
+  <%= f.text_area :bio, :class => "finputarea" %>
+  </div>
+  <br>
+  <br>
+  <div class = "formItem">
+  <%= f.label :specialty, 'Specialty Brew' %> <br>
+  <%= f.text_area :specialty, :class => "finputarea" %>
+  </div>
+  <br>
+  <br>
   <%= f.submit 'Create Brewer'%>
 <% end %>

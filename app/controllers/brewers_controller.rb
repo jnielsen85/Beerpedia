@@ -24,10 +24,13 @@ class BrewersController < ApplicationController
     end
 
     def update
-      # redirect_to root_path unless @current_user.brewer_ids.include? params[:id]
+      if @current_user.brewers.exists? params[:id]
       brewer = Brewer.find params[:id]
       brewer.update brewer_params
       redirect_to brewer
+      else
+      redirect_to root_path
+      end
     end
 
     def destroy

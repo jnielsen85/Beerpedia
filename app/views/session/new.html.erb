@@ -1,10 +1,16 @@
-<h1>Sign In</h1>
 
+
+<div class = "container">
+<div>
+  <h1>...Almost There</h1>
+  <%= image_tag('/assets/almostthere.jpg') %>
+</div>
+<div class = "signin">
 <% if flash[:error].present? %>
   <h2><%= flash[:error] %></h2>
 <% end %>
 
-<%= form_tag login_path do%>
+<%= form_tag login_path, :class => "forms" do%>
   <%= label_tag :email %>
   <%= email_field_tag :email %>
 
@@ -13,3 +19,5 @@
 
   <%= submit_tag "Sign in" %>
 <% end %>
+</div>
+</div>

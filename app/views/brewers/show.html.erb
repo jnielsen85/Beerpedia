@@ -1,15 +1,36 @@
-<h1>Brewer#show</h1>
 
-<h1><%= @brewer.name %></h1>
-<%= image_tag @brewer.image, :class => 'feature' if @brewer.image.present? %>
-<ul>
-  <li><%= @brewer.name %></li>
-  <li><%= @brewer.bio %></li>
-  <li>Specialty: <%= @brewer.specialty %></li>
-</ul>
+<div class = "contDiv">
+  <div class = "leftshow">
+    <div class = "leftinner">
+      <%= image_tag @brewer.image, :class => 'feature' if @brewer.image.present? %>
+      <div class="controls">
+        <%= link_to 'Edit Brewer', edit_brewer_path(@brewer) %>
+        <%= link_to 'Delete Brewer', @brewer, :method => 'delete' %>
+      </div>
+    </div>
+  </div>
+  <div class = "right">
+    <div class ="rightinner">
+      <div>Brewer Name</div><br>
+      <div class = "para"><%= @brewer.name %></div>
+        <br>
+        <br>
+      <div>Bio</div><br>
+      <div class = "para"><%= @brewer.bio %></div>
+        <br>
+        <br>
+      <div>Sprecialty</div><br>
+      <div class = "para"><%= @brewer.specialty %></div>
+    </div>
+    <% @brewer.recipes.each do |recipe| %>
+      <div class = "brewcont">
+        <div class = "brewers">
+          <%= image_tag recipe.image, :class => 'thumb', :alt => recipe.name if recipe.image.present?  %>
+          <br>
+          <%= link_to recipe.name, recipe  %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
-
-<div class="controls">
-  <%= link_to 'Edit Brewer', edit_brewer_path(@brewer) %>
-  <%= link_to 'Delete Brewer', @brewer, :method => 'delete' %>
 </div>
