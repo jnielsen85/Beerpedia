@@ -1,6 +1,14 @@
 <h1>Style</h1>
 
 <h1><%= @style.name %></h1>
-<ul>
-  <li>Name: <%= @style.name %></li>
-</ul>
+
+<% @style.recipes.each do |recipe| %>
+  <div>
+    <div>
+      <%= image_tag recipe.image, :class => 'thumb', :alt => recipe.name if recipe.image.present?  %>
+    </div>
+    <div>
+      <%= link_to recipe.name, recipe  %>
+    </div>
+  </div>
+<% end %>

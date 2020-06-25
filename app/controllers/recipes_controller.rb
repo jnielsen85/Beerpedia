@@ -14,7 +14,7 @@ def index
   end
 
   def create
-    recipe = Recipe.create recipe_params
+    recipe = Recipe.new recipe_params
     @current_user.recipes << recipe
     redirect_to recipe
   end
@@ -24,13 +24,13 @@ def index
   end
 
   def update
-    if @current_user.recipe_ids.include? params[:id]
+    if @current_user.recipes.exists? params[:id]
      recipe = Recipe.find params[:id]
      recipe.update recipe_params
      redirect_to recipe
     else
      redirect_to root_path
-    # redirect_to root_path unless @current_user.recipe_ids.include? params[:id]
+
     # recipe = Recipe.find params[:id]
     # recipe.update recipe_params
     # redirect_to recipe
@@ -46,6 +46,6 @@ def index
 
   private
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :acv, :color, :difficulty, :ingredients, :directions, :equipment, :image)
+    params.require(:recipe).permit(:name, :description, :acv, :color, :difficulty, :ingredients, :directions, :equipment, :image, :style_id)
   end
 end

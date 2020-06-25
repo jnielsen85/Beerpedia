@@ -1,4 +1,6 @@
 <h1>All Types</h1>
-<% @types.each do |recipe| %>
-  <%= link_to @type.name, :alt => type.name, type  %>
+<% @styles.each do |style| %>
+  <div>
+    <%= link_to style.name, style  %>
+  </div>
 <% end %>

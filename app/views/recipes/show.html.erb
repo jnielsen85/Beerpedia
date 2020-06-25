@@ -8,6 +8,9 @@
   <li>Ingredients: <%= @recipe.ingredients %></li>
   <li>Directions: <%= @recipe.directions %></li>
   <li>Equipment: <%= @recipe.equipment %></li>
+  <% if @recipe.style.present? %>
+    <li>Type: <%= @recipe.style.name %></li>
+  <% end  %>
 </ul>
 
 

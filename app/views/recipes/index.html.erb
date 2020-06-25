@@ -7,6 +7,9 @@
     <div>
       <ul>
         <li><%= link_to recipe.name, recipe %></li>
+        <% if recipe.style.present? %>
+          <li>Type: <%= recipe.style.name %></li>
+        <% end %>
       </ul>
     </div>
   </div>
