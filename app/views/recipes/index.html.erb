@@ -1,16 +1,12 @@
-<h1>All Recipes</h1>
 <% @recipes.each do |recipe| %>
-  <div>
-    <div>
+<div class = "brewcont">
+  <div class = "brewers">
     <%= image_tag recipe.image, :class => 'thumb', :alt => recipe.name if recipe.image.present?  %>
-    </div>
-    <div>
-      <ul>
-        <li><%= link_to recipe.name, recipe %></li>
+        <%= link_to recipe.name, recipe %>
+        <br>
         <% if recipe.style.present? %>
-          <li>Type: <%= recipe.style.name %></li>
+          Type: <%= recipe.style.name %>
         <% end %>
-      </ul>
     </div>
   </div>
 <% end %>

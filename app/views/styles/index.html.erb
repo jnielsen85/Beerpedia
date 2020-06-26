@@ -1,6 +1,9 @@
-<h1>All Types</h1>
-<% @styles.each do |style| %>
-  <div>
-    <%= link_to style.name, style  %>
+<div class = "container">
+  <div class = "styleCont">
+    
+      <% @styles.each do |style| %>
+      <%= link_to style.name, style  %>|<br>
+      <% end %>
+
   </div>
-<% end %>
+</div>

@@ -1,20 +1,37 @@
-<h1>Recipes#show</h1>
-
-<h1><%= @recipe.name %></h1>
-<%= image_tag @recipe.image, :class => 'feature' if @recipe.image.present? %>
-<ul>
-  <li>Name: <%= @recipe.name %></li>
-  <li>Decription: <%= @recipe.description %></li>
-  <li>Ingredients: <%= @recipe.ingredients %></li>
-  <li>Directions: <%= @recipe.directions %></li>
-  <li>Equipment: <%= @recipe.equipment %></li>
-  <% if @recipe.style.present? %>
-    <li>Type: <%= @recipe.style.name %></li>
-  <% end  %>
-</ul>
-
-
-<div class="controls">
-  <%= link_to 'Edit Recipe', edit_recipe_path(@recipe) %>
-  <%= link_to 'Delete Recipe', @recipe, :method => 'delete' %>
-</div>
+<div class = "contDiv">
+  <div class = "leftshow">
+    <div class = "leftinner">
+    <%= image_tag @recipe.image, :class => 'feature' if @recipe.image.present? %>
+    <div class="controls">
+      <%= link_to 'Edit Recipe', edit_recipe_path(@recipe) %>
+      <%= link_to 'Delete Recipe', @recipe, :method => 'delete' %>
+    </div>
+    </div>
+  </div>
+  <div class = "right">
+    <div class ="rightInnerRecipe">
+  <div> Recipe Name </div> <br>
+    <div class = "para"><%= @recipe.name %></div>
+    <br>
+    <br>
+    <div>Decription </div> <br>
+    <div class = "para"><%= @recipe.description %></div>
+    <br>
+    <br>
+    <div>Ingredients </div> <br>
+    <div class = "para"><%= @recipe.ingredients %></div>
+    <br>
+    <br>
+    <div>Directions </div> <br>
+    <div class = "para"><%= @recipe.directions %></div>
+    <br>
+    <br>
+    <div> Equipment </div> <br>
+    <div class = "para"><%= @recipe.equipment %></div>
+    <br>
+    <br>
+    <% if @recipe.style.present? %>
+    <div>   Type </div> <br>
+      <div class = "para">  <%= @recipe.style.name %> </div>
+      <br>
+    <% end  %>

@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-before_action :check_for_login
+  before_action :check_for_login
 
 def index
     @recipes = Recipe.all
@@ -24,17 +24,9 @@ def index
   end
 
   def update
-    if @current_user.recipes.exists? params[:id]
      recipe = Recipe.find params[:id]
      recipe.update recipe_params
      redirect_to recipe
-    else
-     redirect_to root_path
-
-    # recipe = Recipe.find params[:id]
-    # recipe.update recipe_params
-    # redirect_to recipe
-    end
   end
 
   def destroy

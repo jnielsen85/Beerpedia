@@ -1,6 +1,10 @@
 <%= form_for @style do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, :required => true, :autofocus => true %>
 
-  <%= f.submit %>
+  <div class = "formItem">
+    <%= f.label :name %> <br>
+    <%= f.text_field :name, :required => true, :autofocus => true %>
+  </div>
+  <br>
+  <br>
+    <%= f.submit "Submit"%> 
 <% end %>

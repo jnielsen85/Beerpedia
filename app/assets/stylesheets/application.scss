@@ -26,7 +26,7 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0;
-  overflow: hidden;
+  // overflow: hidden;
   font-family: 'Roboto Slab', serif;
   color:red;
   text-shadow: 1px 1px 0 #000;
@@ -39,7 +39,7 @@ nav {
   z-index: 1; /* Stay on top */
   top: 0%; /* Stay at the top */
   left: 0;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   padding-top: 20px;
 }
 
@@ -77,10 +77,18 @@ nav a {
 }
 
 .brewcont {
-  max-width: 960px;
+  // max-width: 960px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.styleCont {
+  // max-width: 960px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  line-height: 30px;
 }
 
 .brewers {
@@ -152,6 +160,31 @@ nav a {
   margin-left: -250px;
   justify-content: space-between;
   padding-top: 10em;
+}
+
+.rightinnerbrewer{
+  width: 500px;
+  height: auto;
+  position:absolute;
+  top: 50%;
+  left:50%;
+  margin-top: -40%;
+  margin-left: -250px;
+  justify-content: space-between;
+  padding-top: 10em;
+}
+
+.rightInnerRecipe{
+  width: 500px;
+  height: auto;
+  position:absolute;
+  top: 50%;
+  left:50%;
+  margin-top: -40%;
+  margin-left: -250px;
+  justify-content: space-between;
+  padding-top: 5em;
+  padding-left: 5em;
 }
 
 .recipeUnderBrewer{
