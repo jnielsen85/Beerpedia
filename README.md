@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A site for homebrew enthusiasts.  Creat a profile to share and view other members recipes.  
 
-Things you may want to cover:
+## Project
+* Ruby on Rails
+* PostgreSQL
+* Heroku 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## To Do
+Redeploy to Heroku.  First instance corrupted. 
